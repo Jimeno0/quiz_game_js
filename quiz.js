@@ -1,7 +1,8 @@
 var read = require('read');
 
-function Quiz(questions) {
+function Quiz(questions,user) {
   this.qs = questions;
+  this.user = user;
   this.level = 0;
   this.score = 0;
 }
@@ -13,10 +14,10 @@ Quiz.prototype.addq = function (question) {
 Quiz.prototype.ask = function () {
   if(this.level < this.qs.length){
     var question_text = {prompt: this.qs[this.level].q};
-
+    this.user.level = this.level;
     read(question_text, answer.bind(this));
   } else {
-    console.log('Game finished, total score: ' + this.score);
+    console.log('Game finished, total score: ' + this.user.score + ' for player ' + this.user.name);
   }
 
 };
@@ -33,7 +34,10 @@ function answer( error, response) {
       var msg = 'correct!';
       if (this.qs[this.level].val == 2) { msg += ' You score the bonus question!!';}
       console.log(msg);
-      this.score += this.qs[this.level].val;
+      this.user.score += this.qs[this.level].val;
+    } else if(response === 'save'){
+      console.log('saving your game.... and exit!');
+      return;
     } else {
       console.log('Incorrect, the correct answer is: '+ this.qs[this.level].a);
     }
