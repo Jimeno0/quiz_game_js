@@ -1,6 +1,7 @@
-function User(name) {
+function User(name,level,score) {
   this.name = name;
-  this.score = 0;
+  this.level = level ? level : 0;
+  this.score = score ? score : 0;
 }
 
 module.exports = User;
