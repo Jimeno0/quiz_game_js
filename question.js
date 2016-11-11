@@ -6,7 +6,7 @@
     this.q = question;
     this.a = answer;
     this.val = value;
-    this.index = ++questionIndex;
+    this.id = ++questionIndex;
   }
 
   module.exports = Question;

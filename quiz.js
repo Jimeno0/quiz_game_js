@@ -21,10 +21,21 @@ Quiz.prototype.ask = function () {
 
 };
 
+Quiz.prototype.makeBonus = function () {
+  var randomnumber = Math.floor(Math.random()*(this.qs.length)+ 1);
+  for (var i = 0; i < this.qs.length; i++) {
+     if (this.qs[i].id === randomnumber){ this.qs[i].val *=2; }
+  }
+};
+
 function answer( error, response) {
-    console.log('your response for '+ this.qs[this.level].q + ' is: ' + response);
     if (response === this.qs[this.level].a) {
+      var msg = 'correct!';
+      if (this.qs[this.level].val == 2) { msg += ' You score the bonus question!!';}
+      console.log(msg);
       this.score += this.qs[this.level].val;
+    } else {
+      console.log('Incorrect, the correct answer is: '+ this.qs[this.level].a);
     }
     this.level++;
     this.ask();

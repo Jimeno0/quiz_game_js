@@ -9,5 +9,5 @@ var q3 = new Question('whats your age?','27',1);
 var quizArr = [q,q2,q3];
 
 var quiz = new Quiz (quizArr);
-
+quiz.makeBonus();
 quiz.ask();
