@@ -1,0 +1,24 @@
+{
+  "name": "quiz_game_js",
+  "version": "1.0.0",
+  "description": "quiz game using js on the terminal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jimeno0/quiz_game_js.git"
+  },
+  "keywords": [
+    "game",
+    "quiz",
+    "js"
+  ],
+  "author": "jimeno0",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jimeno0/quiz_game_js/issues"
+  },
+  "homepage": "https://github.com/Jimeno0/quiz_game_js#readme"
+}
